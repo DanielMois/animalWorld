@@ -1,93 +1,112 @@
-# 🎰 AnimalWorld - Plataforma de Apostas
+# 🎰 AnimalWorld - Plataforma de Apostas com Nano
 
-Backend da plataforma AnimalWorld desenvolvido em Node.js com Express e MySQL.
+**Plataforma completa de apostas esportivas integrada com criptomoeda Nano, desenvolvida com AI-assisted coding.**
 
 ## 🚀 Funcionalidades
 
-### Usuários
-- ✅ Registro e login com JWT
-- ✅ Saldo inicial de 10 pontos (cortesia)
-- ✅ Depósito via Nano (mock)
-- ✅ Saque em Nano (mínimo 100 pontos)
-- ✅ Perfil do usuário
+### 🔐 Autenticação e Segurança
+- ✅ **Autenticação obrigatória via carteira Nano** - Usuários só acessam com carteira verificada
+- ✅ **Verificação de pagamento via QR Code** - Compra de pontos exclusivamente via Nano
+- ✅ **JWT authentication** para sessões seguras
+- ✅ **Validação de endereços Nano** em tempo real
+- ✅ **Simulação de pagamentos** para desenvolvimento
 
-### Apostas
-- ✅ 3 modalidades: Dezena (01-99), Centena (001-999), Milhar (0001-9999)
-- ✅ Apostas permitidas entre 9h e 17h
-- ✅ Limites por número: Dezena (10pts), Centena (30pts), Milhar (50pts)
-- ✅ Validação de saldo e limites
-- ✅ Histórico de apostas
+### 💰 Integração Nano Completa
+- ✅ **Carteiras Nano configuráveis** via variáveis de ambiente
+- ✅ **Geração de carteiras** para novos usuários
+- ✅ **Verificação de saldo** em tempo real
+- ✅ **Depósitos e saques** em Nano
+- ✅ **QR Code de pagamento** para compra de pontos
+- ✅ **Histórico de transações** completo
 
-### Sorteios
-- ✅ Sorteio automático às 18h (via admin)
-- ✅ Multiplicadores: Dezena (20x), Centena (400x), Milhar (4000x)
-- ✅ Resultados e vencedores
-- ✅ Status dos sorteios do dia
+### 🎯 Sistema de Apostas
+- ✅ **3 modalidades**: Dezena (01-99), Centena (001-999), Milhar (0001-9999)
+- ✅ **Apostas permitidas** entre 9h e 17h
+- ✅ **Limites por número**: Dezena (10pts), Centena (30pts), Milhar (50pts)
+- ✅ **Validação de saldo** e limites em tempo real
+- ✅ **Suporte a valores decimais** (0.05, 0.000001, etc.)
+- ✅ **Histórico completo** de apostas
 
-### Transações
-- ✅ Depósito com distribuição 85%/15% (carteira-bolsa/carteira-lucro)
-- ✅ Saque com validação de saldo mínimo
-- ✅ Mock de integração Nano
-- ✅ Histórico de transações
+### 🎲 Sorteios e Resultados
+- ✅ **Sorteio automático** às 18h (via admin)
+- ✅ **Multiplicadores**: Dezena (20x), Centena (400x), Milhar (4000x)
+- ✅ **Resultados e vencedores** em tempo real
+- ✅ **Status dos sorteios** do dia
 
-### Administração
-- ✅ Login de admin
-- ✅ Dashboard com KPIs
-- ✅ Controle de sorteios
+### 👨‍💼 Administração
+- ✅ **Dashboard administrativo** com KPIs
+- ✅ **Controle de sorteios** manual
+- ✅ **Gestão de usuários** e transações
+- ✅ **Relatórios** de performance
+
+### 🖥️ Frontend React
+- ✅ **Interface moderna** com Material-UI
+- ✅ **Páginas responsivas**: Login, Registro, Dashboard, Apostas, Carteira, Resultados
+- ✅ **Integração completa** com backend via Axios
+- ✅ **Context API** para gerenciamento de estado
+- ✅ **Navegação** com React Router
+
+## 🛠️ Stack Tecnológica
+
+### Backend
+- **Node.js** + **Express** - API REST
+- **MySQL** - Banco de dados
+- **JWT** - Autenticação
+- **Nano SDK** - Integração cripto
+- **bcrypt** - Hash de senhas
+
+### Frontend
+- **React** - Interface do usuário
+- **Material-UI** - Componentes visuais
+- **Axios** - Comunicação com API
+- **React Router** - Navegação
+- **Context API** - Gerenciamento de estado
+
+### DevOps
+- **Scripts organizados** em pastas específicas
+- **Configuração via .env** completa
+- **Documentação** detalhada
+- **Testes automatizados**
 
 ## 📋 Pré-requisitos
 
-- Node.js (v14 ou superior)
+- Node.js (v16 ou superior)
 - MySQL (v8.0 ou superior)
 - npm ou yarn
+- Carteiras Nano configuradas
 
-## 🛠️ Instalação
+## �� Instalação Rápida
 
-1. **Clone o repositório**
+### 1. **Clone e Configure**
 ```bash
 git clone <url-do-repositorio>
 cd animalworld
-```
-
-2. **Instale as dependências**
-```bash
 npm install
 ```
 
-3. **Configure o banco de dados**
+### 2. **Configuração Automática**
 ```bash
-# Execute o script SQL para criar as tabelas
-mysql -u root -p animalworld < animalworld_schema.sql
+# Criar arquivo .env com todas as configurações
+node scripts/setup/create-env.js
+
+# Inicializar banco de dados
+node scripts/setup/init-db.js
+
+# Criar usuário de teste
+node scripts/setup/create-nano-user.js
 ```
 
-4. **Configure as variáveis de ambiente**
+### 3. **Iniciar Servidores**
 ```bash
-# Copie o arquivo de exemplo
-cp .env.example .env
+# Terminal 1 - Backend
+npm start
 
-# Edite o arquivo .env com suas configurações
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=sua_senha
-DB_NAME=animalworld
-JWT_SECRET=sua_chave_secreta_muito_segura
-```
-
-5. **Inicialize o banco de dados**
-```bash
-npm run init-db
-```
-
-6. **Inicie o servidor**
-```bash
-# Desenvolvimento
-npm run dev
-
-# Produção
+# Terminal 2 - Frontend
+cd frontend
 npm start
 ```
 
-## 🔧 Configuração
+## 🔧 Configuração Detalhada
 
 ### Variáveis de Ambiente (.env)
 
@@ -95,7 +114,7 @@ npm start
 # Banco de Dados
 DB_HOST=localhost
 DB_USER=root
-DB_PASSWORD=sua_senha
+DB_PASSWORD=123456
 DB_NAME=animalworld
 
 # JWT
@@ -103,74 +122,103 @@ JWT_SECRET=sua_chave_secreta_muito_segura
 
 # Servidor
 PORT=3001
+FRONTEND_URL=http://localhost:3000
 
-# Carteiras Nano (mock)
-CARTEIRA_BOLSA=nano_3bolsa123456789abcdefghijklmnopqrstuvwxyz
-CARTEIRA_LUCRO=nano_3lucro123456789abcdefghijklmnopqrstuvwxyz
+# Carteiras Nano do Sistema
+NANO_SYSTEM_WALLET=nano_3system123456789abcdefghijklmnopqrstuvwxyz
+NANO_BOLSA_WALLET=nano_3bolsa123456789abcdefghijklmnopqrstuvwxyz
+NANO_LUCRO_WALLET=nano_3lucro123456789abcdefghijklmnopqrstuvwxyz
+NANO_ADMIN_WALLET=nano_3admin123456789abcdefghijklmnopqrstuvwxyz
+
+# Configurações Nano
+NANO_NODE_URL=https://nano-node.example.com
+NANO_REPRESENTATIVE=nano_3representative123456789abcdefghijklmnopqrstuvwxyz
+NANO_SIMULATION_MODE=true
 ```
 
-### Credenciais Padrão
+### Credenciais de Teste
 
 - **Admin**: `admin` / `admin123`
-- **Usuário**: Registre-se via API
+- **Usuário Teste**: `teste` / `123456` (carteira Nano configurada)
 
 ## 📚 API Endpoints
 
-### Autenticação
-- `POST /api/auth/registro` - Registro de usuário
-- `POST /api/auth/login` - Login de usuário
-- `GET /api/auth/perfil` - Perfil do usuário (autenticado)
+### 🔐 Autenticação Nano
+- `POST /api/auth/registro` - Registro com carteira Nano
+- `POST /api/auth/login` - Login com carteira Nano
+- `POST /api/auth/verificar-pagamento` - Verificar pagamento inicial
+- `GET /api/auth/perfil` - Perfil do usuário
 
-### Administração
-- `POST /api/admin/login` - Login de admin
-- `GET /api/admin/dashboard` - Dashboard com KPIs (admin)
+### 💰 Carteira Nano
+- `POST /api/nano/gerar-carteira` - Gerar nova carteira
+- `GET /api/nano/saldo/:endereco` - Consultar saldo
+- `POST /api/nano/deposito` - Solicitar depósito
+- `POST /api/nano/saque` - Solicitar saque
+- `GET /api/nano/transacoes/:endereco` - Histórico de transações
+- `POST /api/nano/verificar-endereco` - Validar endereço
 
-### Apostas
-- `POST /api/apostas` - Fazer aposta (autenticado)
-- `GET /api/apostas/minhas` - Listar apostas do usuário (autenticado)
-- `GET /api/apostas/pontos-disponiveis/:modalidade/:numero` - Pontos disponíveis (autenticado)
+### 🎯 Apostas
+- `POST /api/apostas` - Fazer aposta
+- `GET /api/apostas/minhas` - Listar apostas do usuário
+- `GET /api/apostas/pontos-disponiveis/:modalidade/:numero` - Pontos disponíveis
 
-### Sorteios
+### 🎲 Sorteios
 - `POST /api/sorteios/realizar` - Realizar sorteio (admin)
 - `GET /api/sorteios/resultados` - Listar resultados
-- `GET /api/sorteios/resultado/:id` - Resultado específico
 - `GET /api/sorteios/status-hoje` - Status dos sorteios do dia
 
-### Transações
-- `POST /api/transacoes/deposito` - Solicitar depósito (autenticado)
-- `POST /api/transacoes/saque` - Solicitar saque (autenticado)
-- `GET /api/transacoes/minhas` - Listar transações (autenticado)
-- `GET /api/transacoes/carteiras` - Carteiras do sistema
+### 👨‍💼 Administração
+- `POST /api/admin/login` - Login de admin
+- `GET /api/admin/dashboard` - Dashboard com KPIs
+- `GET /api/admin/usuarios` - Listar usuários
+- `GET /api/admin/transacoes` - Listar transações
 
-## 🔐 Autenticação
-
-A API usa JWT (JSON Web Tokens) para autenticação. Inclua o token no header:
+## 🗂️ Estrutura do Projeto
 
 ```
-Authorization: Bearer <seu_token_jwt>
+animalworld/
+├── 📁 backend/
+│   ├── 📁 config/          # Configurações do banco
+│   ├── 📁 middleware/      # Middlewares de autenticação
+│   ├── 📁 routes/          # Rotas da API
+│   ├── 📁 services/        # Serviços (Nano, etc.)
+│   └── server.js           # Servidor principal
+├── 📁 frontend/
+│   ├── 📁 src/
+│   │   ├── 📁 components/  # Componentes React
+│   │   ├── 📁 pages/       # Páginas da aplicação
+│   │   ├── 📁 context/     # Context API
+│   │   └── 📁 services/    # Serviços do frontend
+│   └── package.json
+├── 📁 scripts/
+│   ├── 📁 database/        # Scripts SQL e atualizações
+│   ├── 📁 setup/           # Scripts de configuração
+│   └── 📁 test/            # Scripts de teste
+├── .env                    # Configurações (não versionado)
+├── .gitignore             # Arquivos ignorados
+└── README.md              # Este arquivo
 ```
-
-## 📊 Estrutura do Banco de Dados
-
-### Tabelas Principais
-- `usuario` - Usuários da plataforma
-- `admin` - Administradores
-- `aposta` - Apostas realizadas
-- `sorteio` - Sorteios realizados
-- `resultado_aposta` - Resultados das apostas
-- `transacao` - Depósitos e saques
-- `carteira_sistema` - Carteiras Nano do sistema
 
 ## 🎯 Exemplos de Uso
 
-### Registro de Usuário
+### Registro com Carteira Nano
 ```bash
 curl -X POST http://localhost:3001/api/auth/registro \
   -H "Content-Type: application/json" \
   -d '{
     "login": "usuario123",
-    "senha": "senha123",
     "carteira_nano": "nano_3usuario123..."
+  }'
+```
+
+### Compra de Pontos via Nano
+```bash
+curl -X POST http://localhost:3001/api/nano/deposito \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <seu_token>" \
+  -d '{
+    "valor": 0.05,
+    "endereco_destino": "nano_3system..."
   }'
 ```
 
@@ -182,40 +230,70 @@ curl -X POST http://localhost:3001/api/apostas \
   -d '{
     "modalidade": "dezena",
     "numero_apostado": "27",
-    "pontos_apostados": 5
+    "pontos_apostados": 0.05
   }'
 ```
 
-### Realizar Sorteio (Admin)
+## 🧪 Testes
+
 ```bash
-curl -X POST http://localhost:3001/api/sorteios/realizar \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <token_admin>" \
-  -d '{
-    "modalidade": "dezena",
-    "data_sorteio": "2024-01-15"
-  }'
+# Testar conexão com banco
+node scripts/test/test-db.js
+
+# Testar valores decimais
+node scripts/test/test-decimal.js
+
+# Testar verificação de pagamento
+node scripts/test/test-payment-verification.js
 ```
+
+## 🔐 Segurança
+
+### ✅ Implementado
+- **Autenticação obrigatória** via carteira Nano
+- **Verificação de pagamento** em tempo real
+- **Validação de endereços** Nano
+- **JWT tokens** seguros
+- **Hash de senhas** com bcrypt
+- **Variáveis de ambiente** para configurações sensíveis
+
+### 🛡️ Proteções
+- **Arquivos .env** não versionados
+- **Carteiras Nano** protegidas
+- **Logs sensíveis** ignorados
+- **Backups** não versionados
 
 ## 🚨 Limitações e Observações
 
-1. **Integração Nano**: Atualmente usando mock. Para produção, implemente integração real com a rede Nano.
-2. **Horários**: Apostas permitidas entre 9h e 17h, sorteios às 18h.
-3. **Limites**: Respeitados os limites de pontos por número/modalidade.
-4. **Segurança**: Senhas hasheadas com bcrypt, JWT para autenticação.
+1. **Modo Simulação**: Nano em modo simulação para desenvolvimento
+2. **Horários**: Apostas entre 9h-17h, sorteios às 18h
+3. **Limites**: Respeitados os limites por número/modalidade
+4. **Carteira Obrigatória**: Usuários precisam ter carteira Nano verificada
 
 ## 🔄 Próximos Passos
 
-1. Implementar integração real com Nano
-2. Desenvolver frontend (React/Vue.js)
-3. Implementar notificações em tempo real
-4. Adicionar logs e auditoria
-5. Implementar testes automatizados
+1. **Integração real** com rede Nano
+2. **Notificações** em tempo real (WebSocket)
+3. **Logs e auditoria** avançados
+4. **Testes automatizados** completos
+5. **Deploy** em produção
 
 ## 📞 Suporte
 
-Para dúvidas ou problemas, abra uma issue no repositório.
+Para dúvidas ou problemas:
+- Abra uma issue no repositório
+- Consulte a documentação em `/scripts/`
+- Verifique os logs de erro
 
 ---
 
-**Desenvolvido com ❤️ para a plataforma AnimalWorld** 
+## 🎉 Destaques do Projeto
+
+- **🔐 Segurança**: Autenticação obrigatória via carteira Nano
+- **💰 Cripto**: Integração completa com Nano cryptocurrency
+- **🤖 AI-Assisted**: Desenvolvido com assistência de IA
+- **📱 Moderno**: Frontend React com Material-UI
+- **⚡ Rápido**: Setup automatizado com scripts
+- **📚 Documentado**: Documentação completa e organizada
+
+**Desenvolvido com ❤️ e assistência de IA para demonstrar integração moderna entre apostas e criptomoedas.** 
