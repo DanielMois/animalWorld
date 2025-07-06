@@ -1,0 +1,293 @@
+# ===========================================
+# ANIMALWORLD - GITIGNORE
+# ===========================================
+# Arquivos que NÃO devem ser versionados por segurança
+# ===========================================
+
+# ===========================================
+# CONFIGURAÇÕES DE AMBIENTE (.env)
+# ===========================================
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+*.env
+
+# ===========================================
+# BANCO DE DADOS
+# ===========================================
+*.db
+*.sqlite
+*.sqlite3
+database/
+backups/
+*.dump
+*.sql.bak
+
+# ===========================================
+# LOGS E ARQUIVOS TEMPORÁRIOS
+# ===========================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# ===========================================
+# DEPENDÊNCIAS
+# ===========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ===========================================
+# BUILD E DISTRIBUIÇÃO
+# ===========================================
+dist/
+build/
+out/
+.next/
+.nuxt/
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+
+# ===========================================
+# CACHE
+# ===========================================
+.cache/
+.parcel-cache/
+.npm
+.eslintcache
+.stylelintcache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# ===========================================
+# COBERTURA DE TESTES
+# ===========================================
+coverage/
+*.lcov
+.nyc_output
+coverage.json
+*.coverage
+*.coverage.*
+
+# ===========================================
+# CHAVES E CERTIFICADOS
+# ===========================================
+*.pem
+*.key
+*.crt
+*.cert
+*.p12
+*.pfx
+*.p8
+*.pem
+*.key
+*.crt
+*.cert
+*.p12
+*.pfx
+*.p8
+*.jks
+*.keystore
+
+# ===========================================
+# NANO WALLET FILES
+# ===========================================
+*.wallet
+*.seed
+*.private
+nano_wallet/
+wallet_backup/
+*.nano
+*.rai
+
+# ===========================================
+# SISTEMA OPERACIONAL
+# ===========================================
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===========================================
+# EDITORES E IDEs
+# ===========================================
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+# Cursor
+.cursor/
+.cursorrules
+
+# WebStorm/IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ===========================================
+# DOCKER
+# ===========================================
+.dockerignore
+Dockerfile.prod
+docker-compose.override.yml
+docker-compose.prod.yml
+
+# ===========================================
+# SCRIPTS SENSÍVEIS
+# ===========================================
+scripts/setup/create-env.js
+scripts/setup/env_template.txt
+scripts/setup/init-db.js
+scripts/setup/create-*.js
+
+# ===========================================
+# BACKUP E ARQUIVOS TEMPORÁRIOS
+# ===========================================
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ===========================================
+# UPLOADS E ARQUIVOS DE USUÁRIO
+# ===========================================
+uploads/
+public/uploads/
+user_files/
+temp_uploads/
+*.upload
+
+# ===========================================
+# CONFIGURAÇÕES LOCAIS
+# ===========================================
+config/local.js
+config/local.json
+config/local.yml
+config/local.yaml
+config/local.env
+
+# ===========================================
+# MONITORAMENTO E DEBUG
+# ===========================================
+.pm2/
+.pid
+*.pid
+*.seed
+*.pid.lock
+
+# ===========================================
+# ARQUIVOS DE DESENVOLVIMENTO
+# ===========================================
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# ===========================================
+# ARQUIVOS ESPECÍFICOS DO PROJETO
+# ===========================================
+# Backup de banco
+animalworld_backup.sql
+animalworld_dump.sql
+
+# Logs específicos
+animalworld.log
+nano_transactions.log
+payment_verification.log
+
+# Arquivos de configuração local
+local_config.js
+local_settings.json
+
+# ===========================================
+# NOTAS IMPORTANTES
+# ===========================================
+# ⚠️  NUNCA commite:
+# - Arquivos .env com senhas
+# - Chaves privadas
+# - Carteiras Nano
+# - Configurações de banco
+# - Logs com dados sensíveis
+# - Backups de banco
+# =========================================== 
